@@ -11,9 +11,16 @@ function shiftCipher(str, shift = 1) {
     }
     return res;
 }
-console.log(shiftCipher("ab1-zFaGA123-", 3));
+let inputShift = [26, 27, 1000, 5];
+["abz", "abz", "abz", "123=-ASnKb"].forEach((elem, ind) => {
+    console.log(`these letters ${elem} shift to the right by ${inputShift[ind]}, Result =  ${shiftCipher(elem, inputShift[ind])}`);
+});
+console.log("==============================================");
 function shiftDecipher(str, shift = 1) {
     str = str.toLowerCase();
+    if (shift > 26) {
+        shift %= 26;
+    }
     let res = "";
     for (let i = 0; i < str.length; i++) {
         let digit = str.charCodeAt(i);
@@ -24,5 +31,8 @@ function shiftDecipher(str, shift = 1) {
     }
     return res;
 }
-console.log(shiftDecipher("abz.", 3));
+let inpShift = [3, 27, 1000, 6];
+["dec", "bca", "mnl", "123=-ASnKb"].forEach((elem, ind) => {
+    console.log(`these letters ${elem} shift to the left by ${inpShift[ind]}, Result =  ${shiftDecipher(elem, inpShift[ind])}`);
+});
 //# sourceMappingURL=app.js.map
