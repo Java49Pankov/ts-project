@@ -1,11 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Rectangle_1 = require("./Rectangle");
-const Square_1 = require("./Square");
-const shapes = [
-    new Rectangle_1.Rectangle(3, 4),
-    new Square_1.Square(5)
-];
-const sumOfShapes = shapes.reduce((result, current) => result + current.getSquare(), 0);
-console.log(sumOfShapes);
+const CipherDecipher_1 = require("./CipherDecipher");
+const cipDecipher = new CipherDecipher_1.CipherDecipher(97, 122, 1);
+console.log(cipDecipher.cipher("abc"));
 //# sourceMappingURL=app.js.map

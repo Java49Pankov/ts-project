@@ -1,12 +1,6 @@
-import { Shape } from "./ShapeInterface";
-import { Rectangle } from "./Rectangle";
-import { Square } from "./Square";
+import { CipherDecipher } from "./CipherDecipher";
 
-const shapes: Array<Shape> = [
-    new Rectangle(3, 4),
-    new Square(5)
-];
+type TestObj = { str: string, shift: number }
 
-const sumOfShapes: number = shapes.reduce((result, current) =>
-    result + current.getSquare(), 0)
-    console.log(sumOfShapes)
+const cipDecipher = new CipherDecipher(97, 122, 1);
+console.log(cipDecipher.cipher("abc"))
