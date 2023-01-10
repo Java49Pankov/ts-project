@@ -7,7 +7,6 @@ class CipherDecipher {
         this.mostAscii = mostAscii;
         this.shift = shift;
         this.amountCiphered = mostAscii - leastAscii + 1;
-        // this.cipher();
     }
     cipher(str) {
         return this.cipherDecipher(str, this.mapperCipher);
@@ -19,8 +18,8 @@ class CipherDecipher {
         const arrStr = Array.from(str);
         const arrRes = arrStr.map(sym => {
             let res = sym;
-            if (sym <= 'z' && sym >= 'a') {
-                res = mapperFun(sym, this.shift);
+            if (sym.charCodeAt(0) <= this.mostAscii && sym.charCodeAt(0) >= this.leastAscii) {
+                res = mapperFun.call(this, sym);
             }
             return res;
         });
