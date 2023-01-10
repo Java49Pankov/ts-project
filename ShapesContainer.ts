@@ -2,17 +2,16 @@
 import { Shape } from "./ShapeInterface";
 
 export class ShapesContainer implements Shape {
-    // private arrShapes: Array<Shape>;
+
     constructor(
-        private width: number,
-        private height: number
+        private arrShapes: Array<Shape>
     ) {
 
     }
     getSquare(): number {
-        return this.width * this.height;
+        return this.arrShapes.reduce((res, cur) => res + cur.getSquare(), 0)
     }
     getPerimeter(): number {
-        return this.height * 2 + this.width * 2;
+        return this.arrShapes.reduce((res, cur) => res + cur.getPerimeter(), 0)
     }
 }

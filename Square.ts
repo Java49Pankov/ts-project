@@ -1,5 +1,5 @@
-import { ShapesContainer } from "./ShapesContainer";
-export class Square extends ShapesContainer {
+import { Rectangle } from "./Rectangle";
+export class Square extends Rectangle {
     constructor(size: number) {
         super(size, size);
     }

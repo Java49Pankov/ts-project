@@ -2,16 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShapesContainer = void 0;
 class ShapesContainer {
-    // private arrShapes: Array<Shape>;
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
+    constructor(arrShapes) {
+        this.arrShapes = arrShapes;
     }
     getSquare() {
-        return this.width * this.height;
+        return this.arrShapes.reduce((res, cur) => res + cur.getSquare(), 0);
     }
     getPerimeter() {
-        return this.height * 2 + this.width * 2;
+        return this.arrShapes.reduce((res, cur) => res + cur.getPerimeter(), 0);
     }
 }
 exports.ShapesContainer = ShapesContainer;
